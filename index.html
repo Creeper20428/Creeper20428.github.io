@@ -3,7 +3,7 @@
 <head>
 <script src="script1.js"></script>
 <script>
-var statusbar=document.getElementById("statusbar")
+var statusbar=document.getElementById("statusbar"); // global
   function hideLink(){
     var a=document.getElementById("link");
     link.style.visibility="hidden"
@@ -27,8 +27,8 @@ var statusbar=document.getElementById("statusbar")
 <p>A.K.A Joey Kim</p>
 <br />
 <hr />
-<h3>OPTIONS</h3>
-<button onClick="hideLink();">Hide link</button><br />
+<<h3>OPTIONS</h3>
+<button onClick="hideLink();">Hide link</button><br /><!--
 <button onClick="alert(document.cookie);">Show Cookies on this page (if any)</button><br />
 <button onClick="status('READY','#00FF00');">Show Status bar</button><br />
 <hr />
