@@ -4,6 +4,6 @@ You are viewing version 1.0.
 
 Enjoy!
 
-To run a legacy version, go to this url, replacing <VERSION> with the version number.
+To run a legacy version, go to this url, replacing [VERSION] with the version number.
 
-http://creeper20428.github.io/minecraft/old_<VERSION>/
+http://creeper20428.github.io/minecraft/old_[VERSION]/
