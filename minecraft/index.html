@@ -1,9 +1,74 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>Hi</title>
-</head>
-<body>
-<script src = "bundle.js"></script>
-</body>
+	<head>
+		<title>Hi</title>
+		
+		<script>
+			function findPos(obj) {
+
+				var curleft = curtop = 0;
+				if (obj.offsetParent) {
+					curleft = obj.offsetLeft
+					curtop = obj.offsetTop
+					while (obj = obj.offsetParent) {
+						curleft += obj.offsetLeft
+						curtop += obj.offsetTop
+					}
+				}
+				return [curleft,curtop];
+			}
+			// Init function:
+			function init(){
+				var x = document.getElementsByTagName("canvas")[0];
+				var w = x.height; // w = height
+				var h = x.width;  // h = width (messed up).
+				var xPos = findPos(x)[0]; // Get X.
+				var yPos = findPos(x)[1]; // Get Y.
+				var i = document.getElementById("crosshair");
+				i.style.top = ((w / 2) + xPos) + "px";
+				i.style.left = ((h / 2) + yPos) + "px";
+			}
+		</script>
+		<script src = "saveWorld.js"></script>
+		<script src = "commands.js"></script>
+	</head>
+	<body>
+		<script src = "bundle.js"></script>
+		<noscript>
+			<p>Your browser does not support JavaScript! Please upgrade ASAP to a new browser: <br />
+			</p>
+			<ul>
+				<li><a href="http://www.google.com/chrome">Get Chrome</a> &lt;-- DOES NOT REQUIRE ADMIN PRIVLEDGES!</li>
+				<li><a href="http://www.mozilla.org/firefox">Get Firefox</a></li>
+			</ul>
+		</noscript>
+		<img src = "img/crosshair1.png" id = "crosshair" style = "position:absolute;"/>
+		<!-- <input type = "text" id = "input"  style = "position: absolute" /> -->
+		<div id = "containerDiv" style = "position: absolute;">
+			<div id = "log"> </div><!--  style = "position:absolute;"> </div> -->
+			<input type = "text" id = "input" onchange = "processCommand(this.value);this.value = '';"/> <!--  style = "position: absolute" /> -->
+		</div>
+	</body>
+	<style>
+		#log {
+			/* position: absolute; */
+			background-color: rgba(209,209,209, 0.61396106931236092186901386908); /* lol */
+			/* overflow-y: scroll;
+			height: 192px; */
+		}
+		#input {
+			background-color: rgba(360,360,360, 0.1111111111111111111111111111111111111111111111); /* lol 2 */
+			outline-style: none;
+			border: none;
+		}
+		input:focus {
+    			outline:none;
+			box-outline: none;
+		}
+		}
+		#input:focus {
+			outline: none;
+			border-none;
+		}
+	</style>
 </html>
