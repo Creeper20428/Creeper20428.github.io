@@ -38,3 +38,6 @@ function isUpper(t){
 	if(t.toUpperCase() == t){return true;}
 	else{return false;}
 }
+window.onerror = function(a,b,c){
+	alert("ERROR -- " + a + " " + b + " " + c + " ");
+}
